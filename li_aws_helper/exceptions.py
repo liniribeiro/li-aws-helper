@@ -42,6 +42,6 @@ class AWSCredentialsNotFound(Error):
     def __init__(self, *args: object, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.name = "credentials-not-found"
-        self.description = "You must configurate your aws credentials at li-cli before using aws commands." \
+        self.description = "You must configurate your aws credentials at li before using aws commands." \
                            " Try: > li aws configure"
         self.status = HTTPStatus.NOT_FOUND

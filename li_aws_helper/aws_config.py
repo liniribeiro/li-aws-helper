@@ -1,12 +1,15 @@
 import json
+import os
 from pathlib import Path
 
-from exceptions import handle_exception, AWSCredentialsNotFound
+from li_aws_helper.exceptions import handle_exception, AWSCredentialsNotFound
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class AWSConfig:
     _credentials = {}
-    _credentials_file_name = 'credentials.json'
+    _credentials_file_name = f"{BASE_DIR}/credentials.json"
     region_name: str
     access_key: str
     secret_key: str

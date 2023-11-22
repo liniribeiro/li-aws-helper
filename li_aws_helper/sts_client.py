@@ -1,7 +1,7 @@
 import os
 import boto3
 
-from aws.config import AWSConfig
+from li_aws_helper.aws_config import AWSConfig
 
 
 def refresh_token(token_code: str):
@@ -15,12 +15,16 @@ def refresh_token(token_code: str):
     client = session.client(service_name='sts', region_name=aws_config.region_name)
 
     response = client.get_session_token(
-        DurationSeconds=123123,
+        DurationSeconds=129600,
         SerialNumber=aws_config.mfa_arn,
         TokenCode=token_code)
 
     if response:
         credentials = response['Credentials']
+
+        print(credentials["AccessKeyId"])
+        print(credentials["SecretAccessKey"])
+
         items = ['[default]',
                  f'aws_secret_access_key = {credentials["SecretAccessKey"]}',
                  f'aws_access_key_id = {credentials["AccessKeyId"]}',
@@ -30,3 +34,7 @@ def refresh_token(token_code: str):
         with open(user_aws_credentials_file, 'w+') as file:
             items = map(lambda x: x + '\n', items)
             file.writelines(items)
+
+
+
+# refresh_token(xxxx)

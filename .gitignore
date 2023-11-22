@@ -1,3 +1,5 @@
 credentials.json
 /tests/.pytest_cache/
 .idea
+/tests/.pytest_cache/
+/dist/

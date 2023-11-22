@@ -3,7 +3,8 @@ aws-configure:
 	python3 licli/main.py aws config
 
 aws-refresh:
-	python3 licli/main.py aws auth refresh --code 079334
+	python3 licli/main.py --awstoken xxxxxx
+
 
 
 poetry-build-min-version:
