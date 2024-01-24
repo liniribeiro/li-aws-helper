@@ -1,9 +1,9 @@
 
 aws-configure:
-	python3 licli/main.py aws config
+	python3 licli/main.py li config
 
 aws-refresh:
-	python3 licli/main.py --awstoken xxxxxx
+	python3 li_aws_helper/main.py  refresh --token xxxx
 
 
 
