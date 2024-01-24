@@ -4,7 +4,7 @@
 version: 2.1
 
 commands:
-  poetry-build-publish:
+  poetry-build:
     description: Build packages using twine
     steps:
       - run:
@@ -16,8 +16,15 @@ commands:
           command: |
             poetry build
             poetry config pypi-token.pypi ${PYPI_TOKEN}
-            poetry publish
 
+  poetry-publish:
+    description: Build packages using twine
+    steps:
+      - run:
+          name: Publishing Package
+          command: |
+            poetry --skip-existing publish
+            
 
 jobs:
   build-and-publish:
@@ -26,7 +33,8 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - poetry-build-publish
+      - poetry-build
+      - poetry-publish
 
 workflows:
   package:
