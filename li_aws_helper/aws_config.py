@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-from li_cli.exceptions import handle_exception, AWSCredentialsNotFound
+from li_aws_helper.exceptions import handle_exception, AWSCredentialsNotFound
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

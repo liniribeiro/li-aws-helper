@@ -1,8 +1,8 @@
 import typer
 
-from li_cli.aws_config import AWSConfig
-from li_cli.sts_client import refresh_token
-from li_cli.exceptions import handle_exception
+from li_aws_helper.aws_config import AWSConfig
+from li_aws_helper.sts_client import refresh_token
+from li_aws_helper.exceptions import handle_exception
 
 app = typer.Typer()
 

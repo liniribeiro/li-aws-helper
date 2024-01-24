@@ -1,7 +1,7 @@
 import os
 import boto3
 
-from li_cli.aws_config import AWSConfig
+from li_aws_helper.aws_config import AWSConfig
 
 
 def refresh_token(token_code: str):
