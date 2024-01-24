@@ -4,7 +4,7 @@
 version: 2.1
 
 commands:
-  build-and-deploy:
+  poetry-build-publish:
     description: Build packages using twine
     steps:
       - run:
@@ -15,10 +15,8 @@ commands:
           name: Building Package
           command: |
             poetry build
-      - run:
-          name: Upload to PyPI
-          command: |
-            twine upload dist/*
+            poetry config pypi-token.pypi ${PYPI_TOKEN}
+            poetry publish
 
 
 jobs:
@@ -28,16 +26,15 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - build-and-deploy
-
+      - poetry-build-publish
 
 workflows:
-  example:
+  package:
     jobs:
       - build-and-publish:
-        context:
-          - pipy
-        filters:
-          branches:
-            only: main
+          context:
+            - pypi
+          filters:
+            branches:
+              only: main
 
