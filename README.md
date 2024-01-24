@@ -2,7 +2,8 @@
 
 Project to facilitate using aws resources
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/sPZr2fMWPhuqZeBvpgGyz/YR2sCjVn1s6ThF65tYc58B/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/sPZr2fMWPhuqZeBvpgGyz/YR2sCjVn1s6ThF65tYc58B/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/liniribeiro/li-aws-helper/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/liniribeiro/li-aws-helper/tree/main)
+
 
 To start using this project, you must install our package: 
 
