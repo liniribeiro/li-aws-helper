@@ -24,6 +24,7 @@ commands:
           name: Publishing Package
           command: |
             poetry --skip-existing publish
+            echo "Package updated: https://pypi.org/project/li-aws-helper/ "
             
 
 jobs:
