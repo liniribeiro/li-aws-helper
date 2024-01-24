@@ -1,0 +1,43 @@
+# Couldn't automatically generate a config from your source code.
+# This is a generic template to serve as a base for your custom config
+# See: https://circleci.com/docs/configuration-reference
+version: 2.1
+
+commands:
+  build-and-deploy:
+    description: Build packages using twine
+    steps:
+      - run:
+          name: Installing poetry
+          command: |
+            pip install poetry
+      - run:
+          name: Building Package
+          command: |
+            poetry build
+      - run:
+          name: Upload to PyPI
+          command: |
+            twine upload dist/*
+
+
+jobs:
+  build-and-publish:
+    docker:
+      - image: cimg/python:3.11
+    resource_class: small
+    steps:
+      - checkout
+      - build-and-deploy
+
+
+workflows:
+  example:
+    jobs:
+      - build-and-publish:
+        context:
+          - pipy
+        filters:
+          branches:
+            only: main
+
