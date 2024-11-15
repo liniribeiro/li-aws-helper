@@ -34,7 +34,3 @@ def refresh_token(token_code: str):
         with open(user_aws_credentials_file, 'w+') as file:
             items = map(lambda x: x + '\n', items)
             file.writelines(items)
-
-
-
-# refresh_token(xxxx)
