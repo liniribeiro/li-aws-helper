@@ -3,29 +3,10 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-commands:
-  poetry-build:
-    description: Build packages using twine
-    steps:
-      - run:
-          name: Installing poetry
-          command: |
-            pip install poetry
-      - run:
-          name: Building Package
-          command: |
-            poetry build
-            poetry config pypi-token.pypi ${PYPI_TOKEN}
+orbs:
+  li-packages: potato/packages@0.0.1
 
-  poetry-publish:
-    description: Build packages using twine
-    steps:
-      - run:
-          name: Publishing Package
-          command: |
-            poetry --skip-existing publish
-            echo "Package updated: https://pypi.org/project/li-aws-helper/ "
-            
+
 
 jobs:
   build-and-publish:
@@ -34,8 +15,9 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - poetry-build
-      - poetry-publish
+      - li-packages/poetry-build
+      - li-packages/poetry-publish
+
 
 workflows:
   package:
