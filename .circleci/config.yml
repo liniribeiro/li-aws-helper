@@ -5,9 +5,6 @@ version: 2.1
 
 orbs:
   li-packages: potato/packages@0.0.1
-
-
-
 jobs:
   build-and-publish:
     docker:
@@ -15,9 +12,10 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - li-packages/poetry-build
-      - li-packages/poetry-publish
-
+      - li-packages/poetry-build:
+          pipy_token: ${PYPI_TOKEN}
+      - li-packages/poetry-publish:
+          package_pipy_uri: "https://pypi.org/project/li-aws-helper/"
 
 workflows:
   package:
