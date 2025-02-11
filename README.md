@@ -8,7 +8,7 @@ Project to facilitate using aws resources
 To start using this project, you must install our package: 
 
 ```
-pip3 install -r li-aws-helper
+pip3 install li-aws-helper
 ```
 
 And configurate your aws credentials just once:
@@ -24,8 +24,19 @@ The service will make three questions for you:
 All those answers you can find at AWS Console/ Security credentials 
 ![image](assets/mfa_2.png)
 
-  
 
+you can add to .bash a function to make the command shorter:
+```
+litoken(){
+ li refresh --token $1
+}
+```
+
+Then run at your terminal:
+
+```
+litoken xxxxxx
+```
 
 
 ## Package Usage for aws commands
@@ -41,7 +52,7 @@ li refresh --token 770592
 
 Install
 ```
-pip3 install -r li-aws-helper
+pip3 install li-aws-helper
 ```
 
 
