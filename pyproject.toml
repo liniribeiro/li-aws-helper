@@ -1,6 +1,6 @@
 [project]
 name = "li-aws-helper"
-version = "0.4.2"
+version = "0.4.3"
 description = "Package that helps manage aws credentials"
 authors = [{name = "Alini Ribeiro", email = "aliniribeiroo@gmail.com"}]
 readme = "README.md"
