@@ -36,7 +36,7 @@ li config
 
 Then use as commandline to refresh your 2f auth with aws. 
 ```bash
-li refresh --token xxxxxx
+li refresh --token 770592
 ```
 
 Install

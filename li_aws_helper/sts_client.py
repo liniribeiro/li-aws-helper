@@ -22,9 +22,6 @@ def refresh_token(token_code: str):
     if response:
         credentials = response['Credentials']
 
-        print(credentials["AccessKeyId"])
-        print(credentials["SecretAccessKey"])
-
         items = ['[default]',
                  f'aws_secret_access_key = {credentials["SecretAccessKey"]}',
                  f'aws_access_key_id = {credentials["AccessKeyId"]}',
