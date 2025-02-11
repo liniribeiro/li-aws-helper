@@ -47,3 +47,17 @@ class AWSConfig:
                              'mfa_arn': mfa_arn,
                              'session_token': session_token}
         self.write_local_config()
+
+    def reset_configurations(self):
+        with open(self._credentials_file_name, 'r') as file:
+            credentials = json.load(file)
+
+            items = ['[default]',
+                     f'aws_secret_access_key = {credentials["secret_key"]}',
+                     f'aws_access_key_id = {credentials["access_key"]}']
+
+            user_aws_credentials_file = f"{os.path.expanduser('~')}/.aws/credentials"
+            with open(user_aws_credentials_file, 'w+') as file:
+                items = map(lambda x: x + '\n', items)
+                file.writelines(items)
+

@@ -4,6 +4,7 @@
 
 li-aws-helper is a Python library designed to facilitate the management of AWS credentials and the refreshing of session tokens using MFA (Multi-Factor Authentication). This library provides a command-line interface (CLI) to configure AWS credentials and refresh session tokens easily.
 
+
 ## Installation
 To install the li-aws-helper package, use the following command:
 
@@ -26,6 +27,13 @@ MFA Identifier: The ARN of your MFA device.
 All those answers you can find at AWS Console/ Security credentials.
 > Note: The provided credentials will be stored locally in a file named credentials.json.
  
+The library works, modifying your .aws/credentials for the mfa credentials, keeping your original credentials safe.
+For rollback your original credentials, you can run the command:
+```bash
+li rollback
+```
+You shouldn't have to do this, but if you want to rollback the credentials, you can run the command above.
+
 ![image](assets/mfa_2.png)
 
 ## Usage 

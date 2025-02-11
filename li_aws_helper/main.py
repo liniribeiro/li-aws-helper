@@ -28,5 +28,13 @@ def config():
     typer.echo(message)
 
 
+@app.command()
+@handle_exception
+def rollback():
+    AWSConfig().reset_configurations()
+    message = typer.style("All Done!", fg=typer.colors.GREEN, bold=True)
+    typer.echo(message)
+
+
 if __name__ == "__main__":
     app()
