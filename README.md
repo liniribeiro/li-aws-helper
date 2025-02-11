@@ -19,10 +19,10 @@ Before using the library, you need to configure your AWS credentials. Run the fo
 li config
 ```
 he service will prompt you to provide the following information:  
-Region: The AWS region (default is us-east-1).
-Access Key: Your AWS access key.
-Secret Key: Your AWS secret key.
-MFA Identifier: The ARN of your MFA device.
+- Region: The AWS region (default is us-east-1).
+- Access Key: Your AWS access key.
+- Secret Key: Your AWS secret key.
+- MFA Identifier: The ARN of your MFA device.
 
 All those answers you can find at AWS Console/ Security credentials.
 > Note: The provided credentials will be stored locally in a file named credentials.json.
@@ -33,8 +33,6 @@ For rollback your original credentials, you can run the command:
 li rollback
 ```
 You shouldn't have to do this, but if you want to rollback the credentials, you can run the command above.
-
-![image](assets/mfa_2.png)
 
 ## Usage 
 #### Refreshing Session Tokens
